@@ -1,8 +1,6 @@
 package com.linkstech.linkstore;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -10,15 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.linkstech.linkstore.adapter.FragmentSwitch;
+import com.linkstech.linkstore.controller.FragmentSwitch;
 
 public class MainActivity extends AppCompatActivity {
-    private DrawerLayout drawerLayout;
+    public static DrawerLayout drawerLayout;
     private LinearLayout slideMenu;
     private Button btSlideMenu;
     public static Button btLogin;
-    private FragmentSwitch fragmentSwitch;
     public static LinearLayout userInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,18 +51,9 @@ public class MainActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchFragment(FragmentSwitch.LOGIN);
+                FragmentSwitch.getINSTANCE().switchFragment(FragmentSwitch.LOGIN, getSupportFragmentManager());
             }
         });
     }
-    private void switchFragment(int position) {
-        fragmentSwitch = FragmentSwitch.getINSTANCE();
-        Fragment frag = fragmentSwitch.getFragment(position);
-        if (frag != null) {
-            FragmentManager fragmentManager = this.getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.frame_content, frag).commit();
-        }
-        this.drawerLayout.closeDrawers();
-    }
+
 }
