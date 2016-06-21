@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Linkstore.iml" filepath="$PROJECT_DIR$/Linkstore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkstore.iml" filepath="$PROJECT_DIR$/linkstore.iml" />
     </modules>
   </component>
 </project>
