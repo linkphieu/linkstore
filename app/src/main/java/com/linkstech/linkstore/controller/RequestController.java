@@ -52,9 +52,9 @@ public class RequestController {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                LoginResponse loginResponse = new Gson().fromJson(new String(responseBody), LoginResponse.class);
-                System.out.println(loginResponse);
-                LoginFragment.errorText.setText(loginResponse.getMessage());
+//                LoginResponse loginResponse = new Gson().fromJson(new String(responseBody), LoginResponse.class);
+//                System.out.println(loginResponse);
+//                LoginFragment.errorText.setText(loginResponse.getMessage());
             }
         });
     }
