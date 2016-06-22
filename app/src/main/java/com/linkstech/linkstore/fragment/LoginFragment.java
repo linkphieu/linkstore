@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.linkstech.linkstore.R;
-import com.linkstech.linkstore.controller.FragmentSwitch;
 import com.linkstech.linkstore.controller.RequestController;
 import com.linkstech.linkstore.helper.ViewHolder;
 import com.loopj.android.http.RequestParams;
@@ -42,8 +41,8 @@ public class LoginFragment extends Fragment {
                 RequestParams requestParams = new RequestParams();
                 requestParams.add("username", username.getText().toString());
                 requestParams.add("password", password.getText().toString());
-                FragmentSwitch.getINSTANCE().switchFragment(FragmentSwitch.PRODUCT, getFragmentManager());
-//                RequestController.getINSTANCE().login(requestParams,getFragmentManager());
+                RequestController.getINSTANCE().login(requestParams,getFragmentManager());
+//                FragmentSwitch.getINSTANCE().switchFragment(FragmentSwitch.PRODUCT, getFragmentManager());
             }
         });
         return view;

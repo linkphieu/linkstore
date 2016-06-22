@@ -1,52 +1,14 @@
 package com.linkstech.linkstore;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 /**
  * Created by Link Larkin on 6/16/2016.
  */
 public class test {
     public static void main(String[] args) {
-        try {
-            String link = "http://localhost:8084/Linkstech/service/login";
-            link +="?";
-            link +="username=admin";
-            link += "&";
-            link += "password=trung123";
-            URL url = new URL("http://localhost:8084/Linkstech/service/login");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
-
-            if (conn.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
-
-            String output;
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                System.out.println(output);
-            }
-
-            conn.disconnect();
-
-        } catch (MalformedURLException e) {
-
-            e.printStackTrace();
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-
-        }
+        double x1= 21.0273119;
+        double y1= 105.8340303;
+        double x2 = 21.026282;
+        double y2 =105.833551;
+        System.out.println(Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)));
     }
 }
