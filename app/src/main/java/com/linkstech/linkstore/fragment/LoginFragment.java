@@ -42,6 +42,7 @@ public class LoginFragment extends Fragment {
                 requestParams.add("username", username.getText().toString());
                 requestParams.add("password", password.getText().toString());
                 RequestController.getINSTANCE().login(requestParams,getFragmentManager());
+//                FragmentSwitch.getINSTANCE().switchFragment(FragmentSwitch.PRODUCT, getFragmentManager());
             }
         });
         return view;
