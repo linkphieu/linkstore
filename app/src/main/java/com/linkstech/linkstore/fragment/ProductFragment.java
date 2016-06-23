@@ -12,6 +12,7 @@ import com.linkstech.linkstore.adapter.ProductAdapter;
 import com.linkstech.linkstore.controller.RequestController;
 import com.linkstech.linkstore.helper.ViewHolder;
 import com.linkstech.linkstore.object.ProductShow;
+import com.linkstech.linkstore.object.Util;
 import com.loopj.android.http.RequestParams;
 
 import java.util.ArrayList;
@@ -39,16 +40,13 @@ public class ProductFragment extends Fragment {
         adapter = new ProductAdapter(this.getActivity());
         ll = ViewHolder.getView(view, R.id.product_list);
         ll.setAdapter(adapter);
-        RequestController.getINSTANCE().getProduct(new RequestParams(),1);
-//        ArrayList<ProductShow> productShows = new ArrayList<ProductShow>();
-//        productShows.add(new ProductShow(1, 1, "testUser", "Sản phẩm", 200000, " VNĐ", 10, 10, 100, " m"));
-//        productShows.add(new ProductShow(1, 1, "testUser", "Sản phẩm", 100000, " VNĐ", 10, 10, 100, " m"));
-//        productShows.add(new ProductShow(1, 1, "testUser", "Sản phẩm", 200000, " VNĐ", 10, 10, 100, " m"));
-//        ProductFragment.loadProduct(productShows);
+        RequestParams params = new RequestParams();
+        params.add("token", Util.user.getToken());
+        RequestController.getINSTANCE().getProduct(params,1);
         return view;
     }
 
-    public static void loadProduct(ArrayList<ProductShow> productShows) {
+    public static void addProduct(ArrayList<ProductShow> productShows) {
         adapter.addAll(productShows);
     }
 }

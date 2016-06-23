@@ -9,26 +9,22 @@ public class ProductShow {
     private String userScreenName;
     private String show;
     private long price;
+    private String liked;
     private String priceUnit;
-    private int likeCount;
     private int commentCount;
-    private int distance;
+    private double distance;
     private String distanceUnit;
 
     public ProductShow() {
     }
 
-    public ProductShow(int id, int userId, String userScreenName, String show, long price, String priceUnit, int likeCount, int commentCount, int distance, String distanceUnit) {
-        this.id = id;
-        this.userId = userId;
-        this.userScreenName = userScreenName;
-        this.show = show;
-        this.price = price;
-        this.priceUnit = priceUnit;
-        this.likeCount = likeCount;
-        this.commentCount = commentCount;
-        this.distance = distance;
-        this.distanceUnit = distanceUnit;
+
+    public String getLiked() {
+        return liked;
+    }
+
+    public void setLiked(String liked) {
+        this.liked = liked;
     }
 
     public int getId() {
@@ -79,14 +75,6 @@ public class ProductShow {
         this.priceUnit = priceUnit;
     }
 
-    public int getLikeCount() {
-        return likeCount;
-    }
-
-    public void setLikeCount(int likeCount) {
-        this.likeCount = likeCount;
-    }
-
     public int getCommentCount() {
         return commentCount;
     }
@@ -95,11 +83,11 @@ public class ProductShow {
         this.commentCount = commentCount;
     }
 
-    public int getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
