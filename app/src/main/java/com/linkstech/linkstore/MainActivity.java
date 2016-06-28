@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         initView();
         initListener();
+        FragmentSwitch.getINSTANCE().switchFragment(FragmentSwitch.PRODUCT, getSupportFragmentManager());
     }
 
     private void initView() {

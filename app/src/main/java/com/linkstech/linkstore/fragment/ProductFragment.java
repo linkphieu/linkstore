@@ -12,7 +12,6 @@ import com.linkstech.linkstore.adapter.ProductAdapter;
 import com.linkstech.linkstore.controller.RequestController;
 import com.linkstech.linkstore.helper.ViewHolder;
 import com.linkstech.linkstore.object.ProductShow;
-import com.linkstech.linkstore.object.Util;
 import com.loopj.android.http.RequestParams;
 
 import java.util.ArrayList;
@@ -41,12 +40,14 @@ public class ProductFragment extends Fragment {
         ll = ViewHolder.getView(view, R.id.product_list);
         ll.setAdapter(adapter);
         RequestParams params = new RequestParams();
-        params.add("token", Util.user.getToken());
+        params.add("lat", "1");
+        params.add("lon", "1");
         RequestController.getINSTANCE().getProduct(params,1);
         return view;
     }
 
     public static void addProduct(ArrayList<ProductShow> productShows) {
+
         adapter.addAll(productShows);
     }
 }
